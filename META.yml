@@ -1,0 +1,23 @@
+---
+abstract: 'Plugin to check Mail-Adresses'
+author:
+  - 'Renee Baecker <module@renee-baecker.de>'
+build_requires:
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Data-Validate-WithYAML-Plugin-EMail
+provides:
+  Data::Validate::WithYAML::Plugin::EMail:
+    file: lib/Data/Validate/WithYAML/Plugin/EMail.pm
+    version: 0.01
+requires:
+  Regexp::Common::Email::Address: 1.01
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
