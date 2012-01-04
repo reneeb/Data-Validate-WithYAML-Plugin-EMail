@@ -6,9 +6,7 @@ use strict;
 use Carp;
 use Regexp::Common qw[Email::Address];
 
-=head1 NAME
-
-Data::Validate::WithYAML::Plugin::EMail - Plugin to check Mail-Adresses
+# ABSTRACT: Plugin for Data::Validate::WithYAML to check email addresses
 
 =head1 VERSION
 
