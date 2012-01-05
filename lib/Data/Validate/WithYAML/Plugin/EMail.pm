@@ -8,13 +8,23 @@ use Regexp::Common qw[Email::Address];
 
 # ABSTRACT: Plugin for Data::Validate::WithYAML to check email addresses
 
-=head1 VERSION
+our $VERSION = '0.02';
 
-Version 0.01
+sub check {
+    my ($class, $value) = @_;
 
-=cut
+    croak "no value to check" unless defined $value;
 
-our $VERSION = '0.01';
+    my $return = 0;
+    if( $value =~ /($RE{Email}{Address})/ ){
+        $return = 1;
+    }
+
+    return $return;
+}
+
+
+1; # End of Data::Validate::WithYAML::Plugin::EMail
 
 =head1 SYNOPSIS
 
@@ -38,25 +48,11 @@ test.yml
       email:
           plugin: EMail
           type: required
-  
+
 
 =head1 SUBROUTINES
 
 =head2 check
-
-=cut
-
-sub check {
-    my ($class, $value) = @_;
-    
-    croak "no value to check" unless defined $value;
-    
-    my $return = 0;
-    if( $value =~ /($RE{Email}{Address})/ ){
-        $return = 1;
-    }
-    return $return;
-}
 
 =head1 AUTHOR
 
@@ -107,6 +103,17 @@ Copyright 2007 Renee Baecker, all rights reserved.
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
+=head1 AUTHOR
+
+Renee Baecker <module@renee-baecker.de>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Renee Baecker.
+
+This is free software, licensed under:
+
+  The Artistic License 2.0 (GPL Compatible)
+
 =cut
 
-1; # End of Data::Validate::WithYAML::Plugin::EMail
